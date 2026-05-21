@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+nodemon.log
+tailwind.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts (keep compiled CSS in repo for deploy)
+# public/css/style.css  ← intentionally tracked

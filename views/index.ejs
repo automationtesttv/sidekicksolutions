@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="<%= description %>" />
+  <title><%= title %></title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<%- include('partials/nav') %>
+
+<!-- ══════════════════════════════════════════════════════════
+     §1  HERO SECTION
+══════════════════════════════════════════════════════════ -->
+<section id="hero" class="relative min-h-[92vh] flex flex-col items-center justify-center bg-gradient-hero overflow-hidden pt-8 pb-16">
+
+  <!-- Ambient blobs -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-purple-200/25 blur-[120px]"></div>
+    <div class="absolute -bottom-20 -right-20 w-[500px] h-[500px] rounded-full bg-pink-200/25 blur-[100px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-blue-100/20 blur-[140px]"></div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 hero-grid-shimmer opacity-60"></div>
+  </div>
+
+  <div class="container-xl relative z-10 text-center flex flex-col items-center gap-8">
+
+    <!-- Eyebrow badge -->
+    <div class="reveal" data-delay="0">
+      <span class="banner-pill">
+        <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse-slow"></span>
+        Powered by cutting-edge agentic AI
+      </span>
+    </div>
+
+    <!-- Headline -->
+    <div class="reveal reveal-delay-1 max-w-4xl">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tightest text-gray-900 leading-[1.05]">
+        Supercharge your business<br />
+        productivity with
+        <span class="text-gradient-warm"> AI Sidekicks</span>
+      </h1>
+    </div>
+
+    <!-- Subheadline -->
+    <div class="reveal reveal-delay-2 max-w-2xl">
+      <p class="text-lg sm:text-xl text-gray-500 leading-relaxed font-normal">
+        Deploy autonomous AI agents, automate end-to-end workflows, and scale intelligent operations — without adding headcount.
+      </p>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 items-center">
+      <a href="#pricing" class="btn-primary px-7 py-3.5 text-base">
+        Start Free Trial
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+      <a href="#features" class="btn-ghost px-7 py-3.5 text-base gap-2">
+        <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+        </svg>
+        Watch Demo
+      </a>
+    </div>
+
+    <!-- Social proof strip -->
+    <div class="reveal reveal-delay-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-sm text-gray-500">
+      <div class="flex -space-x-2.5">
+        <% const avatarColors = ['bg-purple-400','bg-pink-400','bg-blue-400','bg-emerald-400','bg-amber-400']; %>
+        <% avatarColors.forEach((c, i) => { %>
+        <div class="w-8 h-8 rounded-full <%= c %> border-2 border-white flex items-center justify-center text-white text-xs font-bold ring-1 ring-white/50">
+          <%= String.fromCharCode(65 + i) %>
+        </div>
+        <% }) %>
+      </div>
+      <span><strong class="text-gray-900 font-semibold">2,400+</strong> businesses automated</span>
+      <span class="hidden sm:block text-gray-300">|</span>
+      <span class="flex items-center gap-1">
+        <% for(let s=0;s<5;s++) { %>
+        <svg class="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <% } %>
+        <strong class="text-gray-900 font-semibold ml-1">4.9/5</strong> on G2
+      </span>
+    </div>
+
+    <!-- Hero dashboard mockup -->
+    <div class="reveal reveal-delay-4 w-full max-w-5xl mt-4 animate-float">
+      <div class="relative rounded-3xl border border-gray-200/80 bg-white shadow-card-lg overflow-hidden">
+        <!-- Mock browser bar -->
+        <div class="flex items-center gap-2 px-5 py-3.5 border-b border-gray-100 bg-gray-50/80">
+          <span class="w-3 h-3 rounded-full bg-red-300"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-300"></span>
+          <span class="w-3 h-3 rounded-full bg-green-300"></span>
+          <div class="mx-auto flex items-center gap-2 bg-white border border-gray-200 rounded-lg px-4 py-1 text-xs text-gray-400 w-56">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+            app.sidekick.ai/dashboard
+          </div>
+        </div>
+        <!-- Mock dashboard content -->
+        <div class="p-6 bg-gradient-to-br from-white to-gray-50/60 min-h-[320px] grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Stat cards -->
+          <% const stats = [
+            { label: 'Tasks Automated', val: '14,821', delta: '+12.4%', color: 'text-emerald-500', icon: '⚡' },
+            { label: 'Hours Saved',     val: '3,290',  delta: '+8.7%',  color: 'text-blue-500',    icon: '⏱' },
+            { label: 'Active Agents',   val: '47',     delta: '+3',     color: 'text-purple-500',  icon: '🤖' },
+          ]; %>
+          <% stats.forEach(s => { %>
+          <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-card flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-medium text-gray-500"><%= s.label %></span>
+              <span class="text-base"><%= s.icon %></span>
+            </div>
+            <p class="text-2xl font-bold text-gray-900 tracking-tight"><%= s.val %></p>
+            <p class="text-xs font-semibold <%= s.color %>"><%= s.delta %> this week</p>
+          </div>
+          <% }) %>
+          <!-- Activity feed (spans 2 cols on sm) -->
+          <div class="sm:col-span-2 bg-white rounded-2xl border border-gray-100 p-5 shadow-card">
+            <p class="text-xs font-semibold text-gray-500 mb-4 uppercase tracking-wider">Live Agent Feed</p>
+            <% const feed = [
+              { agent: 'EmailSorter v2',   action: 'Classified 42 emails',      time: '2s ago',  status: 'done'    },
+              { agent: 'LeadQualifier',    action: 'Scored 12 inbound leads',   time: '18s ago', status: 'done'    },
+              { agent: 'InvoiceBot',       action: 'Processing Q2 batch…',      time: 'now',     status: 'running' },
+              { agent: 'SupportAgent',     action: 'Resolved 7 tickets',        time: '1m ago',  status: 'done'    },
+            ]; %>
+            <ul class="flex flex-col gap-3">
+              <% feed.forEach(f => { %>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="w-2 h-2 rounded-full flex-shrink-0 <%= f.status === 'running' ? 'bg-emerald-400 animate-pulse' : 'bg-gray-300' %>"></span>
+                <span class="font-semibold text-gray-700 w-32 flex-shrink-0 truncate"><%= f.agent %></span>
+                <span class="text-gray-500 flex-1 truncate"><%= f.action %></span>
+                <span class="text-gray-400 text-xs flex-shrink-0"><%= f.time %></span>
+              </li>
+              <% }) %>
+            </ul>
+          </div>
+          <!-- Workflow mini-chart placeholder -->
+          <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-card flex flex-col gap-3">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Workflow Health</p>
+            <div class="flex items-end gap-1.5 h-16 mt-auto">
+              <% const bars = [60,75,55,90,80,95,88]; %>
+              <% bars.forEach(b => { %>
+              <div class="flex-1 rounded-t-sm bg-gradient-to-t from-purple-400 to-pink-300 transition-all duration-300 hover:from-purple-500 hover:to-pink-400" style="height:<%= b %>%"></div>
+              <% }) %>
+            </div>
+            <p class="text-xs text-gray-400">Last 7 days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trusted logos row -->
+    <div class="reveal reveal-delay-4 mt-6 w-full">
+      <p class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-6">Trusted by forward-thinking teams at</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-40 grayscale">
+        <% const logos = ['Acme Corp','Vercel','Linear','Stripe','Notion','Figma']; %>
+        <% logos.forEach(l => { %>
+        <span class="text-sm sm:text-base font-bold text-gray-700 tracking-tight"><%= l %></span>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §2  BENTO GRID FEATURES
+══════════════════════════════════════════════════════════ -->
+<section id="features" class="section bg-gray-50/70">
+  <div class="container-xl">
+
+    <!-- Section header -->
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="eyebrow">Platform capabilities</span>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+        Everything you need to run<br />
+        <span class="text-gradient">AI at scale</span>
+      </h2>
+      <p class="text-base sm:text-lg text-gray-500 leading-relaxed">
+        A unified platform for building, deploying, and managing intelligent agents that work around the clock.
+      </p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-auto">
+
+      <!-- Card 1 – large hero card -->
+      <div class="bento-card lg:col-span-2 bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white border-0 reveal">
+        <div class="icon-wrap bg-white/20 backdrop-blur-sm">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold">Custom AI Agent Deployment</h3>
+        <p class="text-purple-100 text-sm leading-relaxed max-w-sm">
+          Spin up purpose-built AI agents configured for your exact workflows. From customer support to internal ops — your sidekick, your rules.
+        </p>
+        <div class="mt-auto flex flex-wrap gap-2">
+          <% ['GPT-4o', 'Claude 4', 'Gemini', 'Llama 3'].forEach(t => { %>
+          <span class="px-3 py-1 rounded-full bg-white/15 text-white text-xs font-medium backdrop-blur-sm"><%= t %></span>
+          <% }) %>
+        </div>
+        <!-- Decorative grid in card -->
+        <div class="absolute right-0 bottom-0 w-48 h-48 opacity-10 pointer-events-none hero-grid-shimmer rounded-3xl"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="icon-wrap bg-gradient-to-br from-blue-500 to-cyan-400">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900">Workflow Automation</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Chain triggers, conditions, and actions into powerful automated pipelines — no code required.
+        </p>
+        <!-- Mini pipeline viz -->
+        <div class="flex items-center gap-2 mt-2 flex-wrap">
+          <% ['Trigger','Filter','Transform','Notify'].forEach((step, i) => { %>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100"><%= step %></span>
+            <% if(i < 3) { %>
+            <svg class="w-3 h-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            <% } %>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bento-card reveal reveal-delay-2">
+        <div class="icon-wrap bg-gradient-to-br from-emerald-500 to-teal-400">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900">Multi-Cloud Orchestration</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Unify agents across AWS, GCP, Azure, and your private infrastructure from a single control plane.
+        </p>
+        <div class="flex gap-2 mt-auto">
+          <% ['AWS','GCP','Azure','On-Prem'].forEach(c => { %>
+          <span class="tag"><%= c %></span>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bento-card reveal reveal-delay-3">
+        <div class="icon-wrap bg-gradient-to-br from-orange-400 to-rose-400">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900">Real-Time Analytics</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Monitor agent performance, task throughput, and cost efficiency with live dashboards and alerts.
+        </p>
+        <!-- Sparkline bars -->
+        <div class="flex items-end gap-1 h-10 mt-auto">
+          <% [40,65,50,80,70,90,75,95,88].forEach(h => { %>
+          <div class="flex-1 rounded-sm bg-gradient-to-t from-orange-400 to-rose-300" style="height:<%= h %>%"></div>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="icon-wrap bg-gradient-to-br from-violet-500 to-purple-600">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900">1-Click Integrations</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Connect to 200+ tools including Slack, HubSpot, Salesforce, Notion, and your custom APIs instantly.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto">
+          <% ['Slack','Notion','HubSpot','Salesforce','Zapier','+195'].forEach(app => { %>
+          <span class="tag"><%= app %></span>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- Card 6 – wide bottom card -->
+      <div class="bento-card sm:col-span-2 lg:col-span-1 bg-gradient-warm border-0 reveal reveal-delay-2">
+        <div class="icon-wrap bg-white/70">
+          <svg class="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900">Enterprise-Grade Security</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          SOC 2 Type II certified. End-to-end encryption, RBAC, audit logs, and private cloud deployment available.
+        </p>
+        <div class="flex gap-2 mt-auto flex-wrap">
+          <% ['SOC 2','GDPR','HIPAA','ISO 27001'].forEach(b => { %>
+          <span class="px-3 py-1 rounded-full bg-white/80 text-gray-700 text-xs font-semibold border border-orange-100"><%= b %></span>
+          <% }) %>
+        </div>
+      </div>
+
+    </div><!-- /bento grid -->
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §3  SOLUTION BLOCKS (alternating single + dual content)
+══════════════════════════════════════════════════════════ -->
+<section id="solutions" class="section bg-white">
+  <div class="container-xl flex flex-col gap-24">
+
+    <!-- Block A – left text / right visual (single content) -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <!-- Text -->
+      <div class="flex-1 flex flex-col gap-6 reveal">
+        <span class="eyebrow">For Enterprise Teams</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          Seamless enterprise<br />integration, zero friction.
+        </h2>
+        <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-lg">
+          Connect Sidekick directly to your existing ERP, CRM, and data infrastructure. Our agents ingest, process, and act on your data without manual intervention.
+        </p>
+        <ul class="flex flex-col gap-3 text-sm text-gray-700">
+          <% [
+            'Pre-built connectors for SAP, Salesforce, Oracle & more',
+            'Secure on-prem & VPC deployment options',
+            'Custom API bridge for legacy systems',
+            'Real-time bi-directional data sync',
+          ].forEach(item => { %>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <%= item %>
+          </li>
+          <% }) %>
+        </ul>
+        <div class="flex gap-3 pt-2">
+          <a href="#" class="btn-primary">Explore Integrations</a>
+          <a href="#" class="btn-ghost">View Docs</a>
+        </div>
+      </div>
+      <!-- Visual card -->
+      <div class="flex-1 reveal reveal-delay-2">
+        <div class="glass-card p-8 bg-gradient-to-br from-purple-50 to-blue-50/50">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-gradient-cta flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900">Integration Hub</p>
+              <p class="text-xs text-gray-500">200+ active connectors</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <% [
+              {name:'Salesforce',color:'bg-blue-100 text-blue-700'},
+              {name:'SAP',color:'bg-green-100 text-green-700'},
+              {name:'HubSpot',color:'bg-orange-100 text-orange-700'},
+              {name:'Stripe',color:'bg-purple-100 text-purple-700'},
+              {name:'Notion',color:'bg-gray-100 text-gray-700'},
+              {name:'Slack',color:'bg-pink-100 text-pink-700'},
+            ].forEach(app => { %>
+            <div class="rounded-xl border border-gray-100 bg-white p-3 text-center shadow-card">
+              <div class="w-8 h-8 rounded-lg <%= app.color %> mx-auto mb-2 flex items-center justify-center text-xs font-bold">
+                <%= app.name.slice(0,2) %>
+              </div>
+              <p class="text-xs font-medium text-gray-700"><%= app.name %></p>
+            </div>
+            <% }) %>
+          </div>
+          <div class="mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+            <p class="text-xs text-emerald-700 font-medium">All systems syncing in real-time</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block B – dual content side by side -->
+    <div class="reveal">
+      <div class="text-center mb-12">
+        <span class="eyebrow">Automation Modes</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          Hands-free automation.<br /><span class="text-gradient">Pick your approach.</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Dual card 1 -->
+        <div class="glass-card p-8 flex flex-col gap-5 bg-gradient-to-br from-blue-50/60 to-white reveal reveal-delay-1">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Supervised Automation</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Agents surface insights and draft actions for human approval. Perfect for regulated industries where oversight is non-negotiable.
+            </p>
+          </div>
+          <ul class="flex flex-col gap-2 text-sm text-gray-600 mt-auto">
+            <% ['Human-in-the-loop review queues','Confidence thresholds & escalation','Full audit trail per decision'].forEach(f => { %>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><%= f %></li>
+            <% }) %>
+          </ul>
+        </div>
+
+        <!-- Dual card 2 -->
+        <div class="glass-card p-8 flex flex-col gap-5 bg-gradient-to-br from-purple-50/60 to-white reveal reveal-delay-2">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Full Autopilot Mode</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Deploy agents that execute complete task sequences autonomously — from intake to resolution — without human intervention.
+            </p>
+          </div>
+          <ul class="flex flex-col gap-2 text-sm text-gray-600 mt-auto">
+            <% ['Zero-touch end-to-end execution','Automatic error recovery & retry','Cost and token usage optimization'].forEach(f => { %>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><%= f %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block C – right text / left visual (single content, reversed) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+      <!-- Text -->
+      <div class="flex-1 flex flex-col gap-6 reveal">
+        <span class="eyebrow">AI Consultation</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          Expert AI strategy,<br />tailored to your industry.
+        </h2>
+        <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-lg">
+          Our enterprise consultants partner with your team to design, pilot, and scale custom AI programs — from initial proof-of-concept to full production rollout.
+        </p>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <% [
+            {label:'Avg. ROI',val:'340%',sub:'within 6 months'},
+            {label:'Time to Deploy',val:'< 2 wks',sub:'pilot to production'},
+            {label:'Uptime SLA',val:'99.95%',sub:'guaranteed'},
+            {label:'Support',val:'24/7',sub:'dedicated CSM'},
+          ].forEach(m => { %>
+          <div class="glass-card p-4">
+            <p class="text-2xl font-extrabold text-gray-900 tracking-tight"><%= m.val %></p>
+            <p class="font-semibold text-gray-700 text-xs mt-0.5"><%= m.label %></p>
+            <p class="text-gray-400 text-xs"><%= m.sub %></p>
+          </div>
+          <% }) %>
+        </div>
+        <a href="#" class="btn-primary w-fit">Book a Strategy Call</a>
+      </div>
+      <!-- Visual -->
+      <div class="flex-1 reveal reveal-delay-2">
+        <div class="glass-card p-8 bg-gradient-to-br from-emerald-50/60 to-white">
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-5">Consultation Process</p>
+          <ol class="flex flex-col gap-0">
+            <% [
+              {step:'01', title:'Discovery Workshop',    desc:'Map your ops and identify highest-ROI AI opportunities.'},
+              {step:'02', title:'Architecture Design',   desc:'Custom agent blueprints aligned to your stack.'},
+              {step:'03', title:'Pilot Deployment',      desc:'2-week live pilot with KPI tracking.'},
+              {step:'04', title:'Full-Scale Rollout',    desc:'Production deployment with dedicated support.'},
+            ].forEach((s, i, arr) => { %>
+            <li class="flex gap-4 <%= i < arr.length-1 ? 'pb-6' : '' %> relative">
+              <% if(i < arr.length-1) { %>
+              <div class="absolute left-5 top-10 bottom-0 w-px bg-gradient-to-b from-emerald-200 to-transparent"></div>
+              <% } %>
+              <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 font-bold text-sm flex items-center justify-center flex-shrink-0 border border-emerald-200 z-10">
+                <%= s.step %>
+              </div>
+              <div class="pt-1.5">
+                <p class="font-semibold text-gray-900 text-sm"><%= s.title %></p>
+                <p class="text-xs text-gray-500 mt-0.5 leading-relaxed"><%= s.desc %></p>
+              </div>
+            </li>
+            <% }) %>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §4  PRICING
+══════════════════════════════════════════════════════════ -->
+<section id="pricing" class="section bg-gray-50/70">
+  <div class="container-xl">
+
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <span class="eyebrow">Simple pricing</span>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+        Transparent plans for every<br /><span class="text-gradient">stage of growth</span>
+      </h2>
+      <p class="text-base text-gray-500">No hidden fees. Cancel anytime. All plans include a 14-day free trial.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="flex justify-center mb-10 reveal">
+      <div id="billing-toggle" class="flex bg-gray-100 rounded-xl p-1 gap-1">
+        <button class="toggle-btn active px-5 py-2 rounded-lg text-sm font-medium text-gray-500 transition-all duration-200" data-period="monthly">Monthly</button>
+        <button class="toggle-btn px-5 py-2 rounded-lg text-sm font-medium text-gray-500 transition-all duration-200 relative" data-period="annual">
+          Annual
+          <span class="absolute -top-3 -right-2 bg-emerald-400 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">-20%</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Plans grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <%
+        const plans = [
+          {
+            name: 'Starter',
+            desc: 'Perfect for small teams just getting started with AI automation.',
+            monthly: 49, annual: 39,
+            highlight: false,
+            badge: null,
+            features: [
+              '5 AI Agents',
+              '10,000 task runs / mo',
+              '50+ integrations',
+              'Email & chat support',
+              'Basic analytics',
+              '1 workspace',
+            ],
+            cta: 'Start Free Trial',
+          },
+          {
+            name: 'Growth',
+            desc: 'For scaling teams that need more power, agents, and priority support.',
+            monthly: 149, annual: 119,
+            highlight: true,
+            badge: 'Most Popular',
+            features: [
+              '25 AI Agents',
+              '100,000 task runs / mo',
+              '200+ integrations',
+              'Priority 24/7 support',
+              'Advanced analytics',
+              '5 workspaces',
+              'Custom agent builder',
+              'API access',
+            ],
+            cta: 'Start Free Trial',
+          },
+          {
+            name: 'Enterprise',
+            desc: 'Unlimited scale, dedicated infrastructure, and white-glove onboarding.',
+            monthly: null, annual: null,
+            highlight: false,
+            badge: null,
+            features: [
+              'Unlimited AI Agents',
+              'Unlimited task runs',
+              'Custom integrations',
+              'Dedicated CSM',
+              'Full audit logs & RBAC',
+              'SLA guarantee (99.95%)',
+              'On-prem / VPC deploy',
+              'SSO & SCIM',
+            ],
+            cta: 'Contact Sales',
+          },
+        ];
+      %>
+
+      <% plans.forEach((plan, pi) => { %>
+      <div class="pricing-card <%= plan.highlight ? 'featured' : '' %> reveal reveal-delay-<%= pi + 1 %>" data-plan-card>
+
+        <% if (plan.badge) { %>
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+          <span class="px-4 py-1 rounded-full bg-white text-purple-700 text-xs font-bold shadow-card border border-purple-100">
+            <%= plan.badge %>
+          </span>
+        </div>
+        <% } %>
+
+        <div>
+          <h3 class="text-lg font-bold <%= plan.highlight ? 'text-white' : 'text-gray-900' %>"><%= plan.name %></h3>
+          <p class="text-sm mt-1 <%= plan.highlight ? 'text-purple-200' : 'text-gray-500' %> leading-relaxed"><%= plan.desc %></p>
+        </div>
+
+        <div class="flex items-end gap-1.5">
+          <% if (plan.monthly !== null) { %>
+          <span class="price-display text-4xl font-extrabold tracking-tight <%= plan.highlight ? 'text-white' : 'text-gray-900' %>"
+                data-monthly="$<%= plan.monthly %>" data-annual="$<%= plan.annual %>">
+            $<%= plan.monthly %>
+          </span>
+          <span class="text-sm mb-1.5 <%= plan.highlight ? 'text-purple-200' : 'text-gray-400' %>">/month</span>
+          <% } else { %>
+          <span class="text-4xl font-extrabold tracking-tight <%= plan.highlight ? 'text-white' : 'text-gray-900' %>">Custom</span>
+          <% } %>
+        </div>
+
+        <a href="#" class="<%= plan.highlight
+          ? 'inline-flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold text-purple-700 bg-white hover:bg-purple-50 transition-colors duration-200 w-full text-center shadow-card'
+          : 'btn-primary w-full justify-center' %>">
+          <%= plan.cta %>
+        </a>
+
+        <div class="divider-gradient opacity-30"></div>
+
+        <ul class="flex flex-col gap-2.5 text-sm">
+          <% plan.features.forEach(f => { %>
+          <li class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 flex-shrink-0 <%= plan.highlight ? 'text-purple-200' : 'text-emerald-500' %>" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span class="<%= plan.highlight ? 'text-purple-100' : 'text-gray-600' %>"><%= f %></span>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- Money-back note -->
+    <p class="text-center text-xs text-gray-400 mt-8 reveal">
+      🔒 14-day free trial · No credit card required · Cancel any time
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §5  TESTIMONIALS
+══════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="section bg-white">
+  <div class="container-xl">
+
+    <div class="text-center max-w-xl mx-auto mb-14 reveal">
+      <span class="eyebrow">Customer love</span>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+        Real results from<br /><span class="text-gradient">real businesses</span>
+      </h2>
+    </div>
+
+    <!-- Testimonials grid – masonry-style with col-span variation -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <%
+        const testimonials = [
+          {
+            quote: "Sidekick replaced an entire ops team function. Our lead qualification workflow runs 24/7 and closes deals 3× faster. The ROI was undeniable within the first month.",
+            name: 'Sarah Chen',
+            role: 'Head of Revenue Ops',
+            company: 'Apex Ventures',
+            avatar: 'SC',
+            avatarColor: 'bg-purple-400',
+            stars: 5,
+            large: true,
+          },
+          {
+            quote: "Deployed our first agent in 3 hours. The integration with Salesforce was flawless and now we have zero manual data entry.",
+            name: 'Marcus Webb',
+            role: 'CTO',
+            company: 'NovaBridge',
+            avatar: 'MW',
+            avatarColor: 'bg-blue-400',
+            stars: 5,
+            large: false,
+          },
+          {
+            quote: "The enterprise security posture gave our legal team confidence. SOC 2 + on-prem option was the deciding factor.",
+            name: 'Priya Nair',
+            role: 'VP Engineering',
+            company: 'Meridian Health',
+            avatar: 'PN',
+            avatarColor: 'bg-emerald-400',
+            stars: 5,
+            large: false,
+          },
+          {
+            quote: "We saved 3,200 engineering hours in Q1 alone using the autopilot workflow mode. It's not automation — it's a competitive advantage.",
+            name: 'Daniel Torres',
+            role: 'Director of Engineering',
+            company: 'Stack Dynamics',
+            avatar: 'DT',
+            avatarColor: 'bg-pink-400',
+            stars: 5,
+            large: false,
+          },
+          {
+            quote: "The multi-cloud orchestration meant we could unify agents across AWS and GCP without any architectural refactoring. Absolutely seamless.",
+            name: 'Lena Fischer',
+            role: 'Platform Lead',
+            company: 'CloudAxis',
+            avatar: 'LF',
+            avatarColor: 'bg-amber-400',
+            stars: 5,
+            large: false,
+          },
+          {
+            quote: "Our customer support agents handle 80% of tickets without escalation. CSAT scores actually went up. The team was skeptical — now they're converts.",
+            name: 'James Okafor',
+            role: 'CEO',
+            company: 'TrueServe',
+            avatar: 'JO',
+            avatarColor: 'bg-rose-400',
+            stars: 5,
+            large: true,
+          },
+        ];
+      %>
+
+      <% testimonials.forEach((t, i) => { %>
+      <div class="testimonial-card reveal reveal-delay-<%= (i % 3) + 1 %> <%= t.large ? 'lg:col-span-1' : '' %>">
+        <!-- Stars -->
+        <div class="flex gap-0.5">
+          <% for(let s = 0; s < t.stars; s++) { %>
+          <svg class="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <% } %>
+        </div>
+        <!-- Quote -->
+        <blockquote class="text-sm text-gray-700 leading-relaxed flex-1">
+          "<%= t.quote %>"
+        </blockquote>
+        <!-- Author -->
+        <div class="flex items-center gap-3 pt-1 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full <%= t.avatarColor %> flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+            <%= t.avatar %>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-gray-900"><%= t.name %></p>
+            <p class="text-xs text-gray-500"><%= t.role %> · <%= t.company %></p>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §6  MEET THE TEAM
+══════════════════════════════════════════════════════════ -->
+<section id="team" class="section bg-gray-50/70">
+  <div class="container-xl">
+
+    <div class="text-center max-w-xl mx-auto mb-14 reveal">
+      <span class="eyebrow">The crew</span>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+        Built by engineers who've<br /><span class="text-gradient">shipped AI at scale</span>
+      </h2>
+      <p class="text-base text-gray-500">Our team comes from Anthropic, Google DeepMind, OpenAI, and leading SaaS companies.</p>
+    </div>
+
+    <%
+      const team = [
+        { name: 'Alex Monroe',    role: 'Co-founder & CEO',     bg: 'from-purple-400 to-fuchsia-400', initials: 'AM', bio: 'Former AI Research Lead at Google DeepMind. Built enterprise LLM systems serving 10M+ users.' },
+        { name: 'Priya Sharma',   role: 'Co-founder & CTO',     bg: 'from-blue-400 to-cyan-400',       initials: 'PS', bio: 'Ex-Anthropic. Architect of multi-agent systems used in Fortune 500 deployments.' },
+        { name: 'Jordan Blake',   role: 'Head of Product',      bg: 'from-emerald-400 to-teal-400',    initials: 'JB', bio: 'Previously led product at Linear and Vercel. Obsessed with developer experience.' },
+        { name: 'Mei-Ling Zhou',  role: 'Head of Engineering',  bg: 'from-orange-400 to-rose-400',     initials: 'MZ', bio: 'Distributed systems veteran. 15 years building real-time data infrastructure.' },
+        { name: 'Kofi Asante',    role: 'Head of Partnerships', bg: 'from-amber-400 to-orange-400',    initials: 'KA', bio: 'Scaled partner ecosystems at Stripe and Twilio to 3,000+ integrations.' },
+        { name: 'Sam Rivera',     role: 'Lead AI Architect',    bg: 'from-pink-400 to-rose-500',       initials: 'SR', bio: 'PhD in ML from MIT. Specializes in agentic reasoning and tool-use frameworks.' },
+        { name: 'Dana Kim',       role: 'Head of Design',       bg: 'from-violet-400 to-purple-500',   initials: 'DK', bio: 'Ex-Figma & Framer. Brings product design intuition to every user touchpoint.' },
+        { name: 'Oliver Steele',  role: 'VP of Sales',          bg: 'from-teal-400 to-emerald-500',    initials: 'OS', bio: 'Closed over $40M ARR at enterprise SaaS companies. Customer-obsessed.' },
+      ];
+    %>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+      <% team.forEach((member, i) => { %>
+      <div class="team-card reveal reveal-delay-<%= (i % 4) + 1 %>">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br <%= member.bg %> flex items-center justify-center text-white font-bold text-lg shadow-card">
+          <%= member.initials %>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900 text-sm"><%= member.name %></p>
+          <p class="text-xs text-purple-600 font-medium mt-0.5"><%= member.role %></p>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed text-center"><%= member.bio %></p>
+        <div class="flex gap-2 mt-1">
+          <a href="#" aria-label="LinkedIn" class="w-7 h-7 rounded-lg bg-gray-100 hover:bg-blue-100 hover:text-blue-600 flex items-center justify-center text-gray-400 transition-colors duration-200">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="w-7 h-7 rounded-lg bg-gray-100 hover:bg-purple-100 hover:text-purple-600 flex items-center justify-center text-gray-400 transition-colors duration-200">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- Join team CTA -->
+    <div class="mt-12 text-center reveal">
+      <p class="text-sm text-gray-500 mb-4">We're a team of 32 and growing fast.</p>
+      <a href="#" class="btn-ghost">View Open Roles →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     §7  FAQ
+══════════════════════════════════════════════════════════ -->
+<section id="faq" class="section bg-white">
+  <div class="container-xl">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="text-center mb-14 reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+          Questions?<br /><span class="text-gradient">We've got answers.</span>
+        </h2>
+        <p class="text-base text-gray-500">Can't find what you're looking for? <a href="#" class="text-purple-600 hover:underline font-medium">Chat with us →</a></p>
+      </div>
+
+      <%
+        const faqs = [
+          {
+            q: 'How quickly can I deploy my first AI agent?',
+            a: 'Most customers have their first agent live within 2 hours. Our setup wizard, pre-built templates, and 200+ integration connectors make it fast to go from sign-up to production. Enterprise customers also receive dedicated onboarding support.'
+          },
+          {
+            q: 'Which AI models does Sidekick support?',
+            a: "We support all major frontier models including Claude 4 (Anthropic), GPT-4o (OpenAI), Gemini 1.5 Pro (Google), Llama 3 (Meta), and Mistral. You can mix models across different agents or use your own fine-tuned models via our Bring-Your-Own-Model (BYOM) feature."
+          },
+          {
+            q: 'Is my data secure and private?',
+            a: "Absolutely. Sidekick is SOC 2 Type II certified, GDPR compliant, and HIPAA-eligible. All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We never train on your data. Enterprise plans support private cloud or on-premise deployment for full data sovereignty."
+          },
+          {
+            q: "What's the difference between Supervised and Autopilot mode?",
+            a: "Supervised mode routes agent outputs to a human review queue before any action is taken — ideal for high-stakes or regulated workflows. Autopilot mode lets agents execute complete task sequences autonomously. You can configure per-agent, per-task-type, or per-confidence-level rules to mix both modes."
+          },
+          {
+            q: 'Can I connect my existing tools and APIs?',
+            a: "Yes. We offer 200+ native integrations (Salesforce, HubSpot, Slack, Notion, Stripe, SAP, and more) plus a universal API connector for any REST or GraphQL endpoint. We also support custom webhooks and Zapier/Make for no-code integration paths."
+          },
+          {
+            q: 'What happens if an agent makes a mistake?',
+            a: "Every agent action is logged with full context and a confidence score. You can set auto-rollback rules, configure error escalation paths, and replay any failed task with corrected context. Our audit trail gives you complete visibility and accountability."
+          },
+          {
+            q: 'Do you offer volume pricing for high task usage?',
+            a: "Yes. Enterprise plans include custom volume-based pricing for task runs. Contact our sales team and we can build a package around your expected throughput, model usage mix, and deployment requirements. We offer annual contracts with significant savings."
+          },
+          {
+            q: 'What support options are available?',
+            a: "Starter plans include email and in-app chat support. Growth plans include priority 24/7 support with a 4-hour SLA. Enterprise plans include a dedicated Customer Success Manager, a private Slack channel, and on-call engineering support."
+          },
+        ];
+      %>
+
+      <div id="faq-list" class="flex flex-col gap-3">
+        <% faqs.forEach((faq, i) => { %>
+        <div class="faq-item reveal reveal-delay-<%= (i % 3) + 1 %>">
+          <button class="faq-trigger" aria-expanded="false" data-faq-index="<%= i %>">
+            <span><%= faq.q %></span>
+            <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </button>
+          <div class="faq-body" id="faq-body-<%= i %>">
+            <p class="px-6 pb-6 text-sm text-gray-500 leading-relaxed"><%= faq.a %></p>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
