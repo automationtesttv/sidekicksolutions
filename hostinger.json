@@ -2,6 +2,6 @@
   "framework": "nodejs",
   "build": "npm run build",
   "start": "npm start",
-  "outputDirectory": "public",
+  "outputDirectory": "dist",
   "nodeVersion": "22"
 }
