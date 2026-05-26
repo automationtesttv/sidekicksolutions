@@ -1,0 +1,7 @@
+{
+  "framework": "nodejs",
+  "build": "npm run build",
+  "start": "npm start",
+  "outputDirectory": "public",
+  "nodeVersion": "18"
+}
