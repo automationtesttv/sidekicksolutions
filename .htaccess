@@ -1,0 +1,3 @@
+# Hostinger – route all requests through Node.js
+# (only needed if Hostinger uses Apache in front of Node)
+DirectoryIndex disabled
